@@ -11,6 +11,445 @@ console.log(checkedCategories,
 compliance,
 customization,
 settings,)
+
+
+const moreInfoTranslations = {
+  English: "More Info",
+  Spanish: "Más Información",
+  French: "Plus d'Informations",
+  German: "Weitere Informationen",
+  Italian: "Maggiori Informazioni",
+  Portuguese: "Mais Informações",
+  Swedish: "Mer Info",
+  Dutch: "Meer Info",
+};
+
+const ccpaTranslations = {
+  English: {
+    heading: "Opt-out Preference",
+    description:
+      "We use third-party cookies that help us analyze how you use this website, store your preferences, and provide the content and advertisements that are relevant to you. We do not sell your information. However, you can opt out of these cookies by checking Do Not Share My Personal Information and clicking the Save My Preferences button. Once you opt out, you can opt in again at any time by unchecking Do Not Share My Personal Information and clicking the Save My Preferences button",
+    doNotShare: ".Do Not Share My Personal Information",
+    savePreference: "Save My Preference",
+    cancel: "Cancel",
+  },
+  Spanish: {
+    heading: "Preferencia de Exclusión",
+    description:
+      "Utilizamos cookies de terceros que nos ayudan a analizar cómo utiliza este sitio web, almacenar sus preferencias y proporcionar contenido y anuncios relevantes para usted. No vendemos su información. Sin embargo, puede optar por no recibir estas cookies marcando No Compartir Mi Información Personal y haciendo clic en el botón Guardar Mis Preferencias. Una vez que opte por no participar, puede volver a participar en cualquier momento desmarcando No Compartir Mi Información Personal y haciendo clic en el botón Guardar Mis Preferencias",
+    doNotShare: ".No Compartir Mi Información Personal.",
+    savePreference: "Guardar Mi Preferencia",
+    cancel: "Cancelar",
+  },
+  French: {
+    heading: "Préférence de Désinscription",
+    description:
+      "Nous utilisons des cookies tiers qui nous aident à analyser votre utilisation de ce site web, à stocker vos préférences et à fournir du contenu et des publicités pertinents pour vous. Nous ne vendons pas vos informations. Cependant, vous pouvez désactiver ces cookies en cochant Ne Pas Partager Mes Informations Personnelles et en cliquant sur le bouton Enregistrer Mes Préférences. Une fois désactivé, vous pouvez réactiver à tout moment en décochant Ne Pas Partager Mes Informations Personnelles et en cliquant sur le bouton Enregistrer Mes Préférences",
+    doNotShare: ".Ne Pas Partager Mes Informations Personnelles.",
+    savePreference: "Enregistrer Mes Préférences",
+    cancel: "Annuler",
+  },
+  German: {
+    heading: "Abmeldepräferenzen",
+    description:
+      "Wir verwenden Cookies von Drittanbietern, die uns helfen, Ihre Nutzung dieser Website zu analysieren, Ihre Präferenzen zu speichern und relevante Inhalte und Werbung bereitzustellen. Wir verkaufen Ihre Informationen nicht. Sie können diese Cookies jedoch deaktivieren, indem Sie 'Meine persönlichen Informationen nicht weitergeben' auswählen und auf 'Meine Präferenzen speichern' klicken. Sobald deaktiviert, können Sie dies jederzeit rückgängig machen, indem Sie die Auswahl von 'Meine persönlichen Informationen nicht weitergeben' aufheben und erneut auf 'Meine Präferenzen speichern' klicken.",
+    doNotShare: "Meine persönlichen Informationen nicht weitergeben",
+    savePreference: "Meine Präferenzen speichern",
+    cancel: "Abbrechen",
+  },
+  Swedish: {
+    heading: "Avregistreringspreferens",
+    description:
+      "Vi använder tredjepartscookies som hjälper oss att analysera hur du använder denna webbplats, lagra dina preferenser och tillhandahålla innehåll och annonser som är relevanta för dig. Vi säljer inte din information. Du kan dock välja bort dessa cookies genom att kryssa i 'Dela Inte Min Personliga Information' och klicka på 'Spara Mina Preferenser'-knappen. När du väljer bort kan du välja tillbaka när som helst genom att avmarkera 'Dela Inte Min Personliga Information' och klicka på 'Spara Mina Preferenser'-knappen",
+    doNotShare: "Dela Inte Min Personliga Information",
+    savePreference: "Spara Mina Preferenser",
+    cancel: "Avbryt",
+  },
+  Dutch: {
+    heading: "Afmeldingsvoorkeur",
+    description:
+      "We gebruiken cookies van derden die ons helpen bij het analyseren van hoe u deze website gebruikt, het opslaan van uw voorkeuren en het leveren van inhoud en advertenties die relevant voor u zijn. We verkopen uw informatie niet. U kunt deze cookies echter uitschakelen door 'Deel Mijn Persoonlijke Informatie Niet' aan te vinken en op de 'Sla Mijn Voorkeuren Op'-knop te klikken. Zodra u zich afmeldt, kunt u zich opnieuw aanmelden door het vinkje bij 'Deel Mijn Persoonlijke Informatie Niet' te verwijderen en op de 'Sla Mijn Voorkeuren Op'-knop te klikken",
+    doNotShare: "Deel Mijn Persoonlijke Informatie Niet",
+    savePreference: "Sla Mijn Voorkeuren Op",
+    cancel: "Annuleren",
+  },
+  Portuguese: {
+    heading: "Preferência de Exclusão",
+    description:
+      "Utilizamos cookies de terceiros que nos ajudam a analisar como você utiliza este site, armazenar suas preferências e fornecer conteúdos e anúncios relevantes para você. Não vendemos suas informações. No entanto, você pode desativar esses cookies marcando a opção Não Compartilhar Minhas Informações Pessoais e clicando no botão Salvar Minhas Preferências. Após desativar, você pode ativar novamente a qualquer momento desmarcando a opção e clicando no botão Salvar Minhas Preferências.",
+    doNotShare: "Não Compartilhar Minhas Informações Pessoais",
+    savePreference: "Salvar Minhas Preferências",
+    cancel: "Cancelar",
+  },
+  Italian: {
+    heading: "Preferenza di Opt-out",
+    description:
+      "Utilizziamo cookie di terze parti che ci aiutano ad analizzare come utilizzi questo sito web, a memorizzare le tue preferenze e a fornire contenuti e annunci pertinenti. Non vendiamo le tue informazioni. Tuttavia, puoi disattivare questi cookie selezionando Non Condividere le Mie Informazioni Personali e facendo clic sul pulsante Salva le Mie Preferenze. Una volta disattivato, puoi riattivarlo in qualsiasi momento deselezionando l'opzione e facendo clic sul pulsante Salva le Mie Preferenze.",
+    doNotShare: "Non Condividere le Mie Informazioni Personali",
+    savePreference: "Salva le Mie Preferenze",
+    cancel: "Annulla",
+  },
+};
+const translations = {
+  English: {
+    heading: "Cookie Settings",
+    description:
+      "We use cookies to provide you with the best possible experience. They also allow us to analyze user behavior in order to constantly improve the website for you.",
+    accept: "Accept",
+    reject: "Reject",
+    preferences: "Preference",
+    ccpa: {
+      heading: "We value your Privacy",
+      description:
+        "We use cookies to provide you with the best possible experience. They also allow us to analyze user behavior in order to constantly improve the website for you.",
+      doNotShare: "Do Not Share My Personal Information",
+    },
+  },
+  Spanish: {
+    heading: "Configuración de Cookies",
+    description:
+      "Utilizamos cookies para brindarle la mejor experiencia posible. También nos permiten analizar el comportamiento del usuario para mejorar constantemente el sitio web para usted.",
+    accept: "Aceptar",
+    reject: "Rechazar",
+    preferences: "Preferencias",
+    ccpa: {
+      heading: "Valoramos tu Privacidad",
+      description:
+        "Utilizamos cookies para brindarle la mejor experiencia posible. También nos permiten analizar el comportamiento del usuario para mejorar constantemente el sitio web para usted.",
+      doNotShare: "No Compartir Mi Información Personal",
+    },
+  },
+  French: {
+    heading: "Paramètres des Cookies",
+    description:
+      "Nous utilisons des cookies pour vous offrir la meilleure expérience possible. Ils nous permettent également d'analyser le comportement des utilisateurs afin d'améliorer constamment le site Web pour vous.",
+    accept: "Accepter",
+    reject: "Refuser",
+    preferences: "Préférences",
+    ccpa: {
+      heading: "Nous Respectons Votre Vie Privée",
+      description:
+        "Nous utilisons des cookies pour vous offrir la meilleure expérience possible. Ils nous permettent également d'analyser le comportement des utilisateurs afin d'améliorer constamment le site Web pour vous.",
+      doNotShare: "Ne Pas Partager Mes Informations Personnelles",
+    },
+  },
+  German: {
+    heading: "Cookie-Einstellungen",
+    description:
+      "Wir verwenden Cookies, um Ihnen das bestmögliche Erlebnis zu bieten. Sie helfen uns auch, das Nutzerverhalten zu analysieren, um die Website kontinuierlich für Sie zu verbessern.",
+    accept: "Akzeptieren",
+    reject: "Ablehnen",
+    preferences: "Einstellungen",
+    ccpa: {
+      heading: "Wir Respektieren Ihre Privatsphäre",
+      description:
+        "Wir verwenden Cookies, um Ihnen das bestmögliche Erlebnis zu bieten. Sie helfen uns auch, das Nutzerverhalten zu analysieren, um die Website kontinuierlich für Sie zu verbessern.",
+      doNotShare: "Meine persönlichen Informationen nicht weitergeben",
+    },
+  },
+  Swedish: {
+    heading: "Cookie-inställningar",
+    description:
+      "Vi använder cookies för att ge dig den bästa möjliga upplevelsen. De låter oss också analysera användarbeteende för att ständigt förbättra webbplatsen för dig.",
+    accept: "Acceptera",
+    reject: "Avvisa",
+    preferences: "Inställningar",
+    ccpa: {
+      heading: "Vi Värdesätter Din Integritet",
+      description:
+        "Vi använder cookies för att ge dig den bästa möjliga upplevelsen. De låter oss också analysera användarbeteende för att ständigt förbättra webbplatsen för dig.",
+      doNotShare: "Dela Inte Min Personliga Information",
+    },
+  },
+  Dutch: {
+    heading: "Cookie-instellingen",
+    description:
+      "We gebruiken cookies om u de best mogelijke ervaring te bieden. Ze stellen ons ook in staat om gebruikersgedrag te analyseren om de website voortdurend voor u te verbeteren.",
+    accept: "Accepteren",
+    reject: "Weigeren",
+    preferences: "Voorkeuren",
+    ccpa: {
+      heading: "We Waarderen Uw Privacy",
+      description:
+        "We gebruiken cookies om u de best mogelijke ervaring te bieden. Ze stellen ons ook in staat om gebruikersgedrag te analyseren om de website voortdurend voor u te verbeteren.",
+      doNotShare: "Deel Mijn Persoonlijke Informatie Niet",
+    },
+  },
+  // Add these after the Dutch translations and before the closing brace
+  Italian: {
+    heading: "Impostazioni Cookie",
+    description:
+      "Utilizziamo i cookie per fornirti la migliore esperienza possibile. Ci permettono anche di analizzare il comportamento degli utenti per migliorare costantemente il sito web per te.",
+    accept: "Accetta",
+    reject: "Rifiuta",
+    preferences: "Preferenze",
+    ccpa: {
+      heading: "Rispettiamo la Tua Privacy",
+      description:
+        "Utilizziamo i cookie per fornirti la migliore esperienza possibile. Ci permettono anche di analizzare il comportamento degli utenti per migliorare costantemente il sito web per te.",
+      doNotShare: "Non Condividere Le Mie Informazioni Personali",
+    },
+  },
+  Portuguese: {
+    heading: "Configurações de Cookies",
+    description:
+      "Usamos cookies para fornecer a melhor experiência possível. Eles também nos permitem analisar o comportamento do usuário para melhorar constantemente o site para você.",
+    accept: "Aceitar",
+    reject: "Rejeitar",
+    preferences: "Preferências",
+    ccpa: {
+      heading: "Valorizamos Sua Privacidade",
+      description:
+        "Usamos cookies para fornecer a melhor experiência possível. Eles também nos permitem analisar o comportamento do usuário para melhorar constantemente o site para você.",
+      doNotShare: "Não Compartilhar Minhas Informações Pessoais",
+    },
+  },
+};
+const finalTranslations = {
+  English: {
+    heading: "Cookie Preferences",
+    description:
+      "By clicking, you agree to store cookies on your device to enhance navigation, analyze usage, and support marketing",
+    acceptAll: "Save Preference",
+    reject: "Reject",
+    changePreference: "Change Preference",
+    sections: {
+      essential: {
+        label: "Essential",
+        description:
+          "Essential cookies enable core site functions like security and accessibility. They don't store personal data and cant be disabled.",
+      },
+      analytics: {
+        label: "Analytics",
+        description:
+          "These cookies collect anonymous data to help us improve website functionality and enhance user experience.",
+      },
+      marketing: {
+        label: "Marketing",
+        description:
+          "These cookies track users across websites to deliver relevant ads and may process personal data, requiring explicit consent.",
+      },
+      preferences: {
+        label: "Preferences",
+        description:
+          "These cookies remember settings like language or region and store display preferences to offer a more personalized, seamless experience.",
+      },
+    },
+  },
+  Spanish: {
+    heading: "Preferencias de Cookies",
+    description:
+      "Al hacer clic, acepta el almacenamiento de cookies en su dispositivo para mejorar la navegación del sitio, analizar el uso del sitio y ayudar en nuestros esfuerzos de marketing como se describe en nuestro.",
+    acceptAll: "Aceptar Todo",
+    reject: "Rechazar",
+    changePreference: "Cambiar Preferencias",
+    sections: {
+      essential: {
+        label: "Esenciales",
+        description:
+          "Las cookies esenciales permiten funciones básicas del sitio como la seguridad y la accesibilidad. No almacenan datos personales y no se pueden desactivar.",
+      },
+      analytics: {
+        label: "Analíticas",
+        description:
+          "Estas cookies recopilan datos anónimos para ayudarnos a mejorar la funcionalidad del sitio web y optimizar la experiencia del usuario.",
+      },
+      marketing: {
+        label: "Marketing",
+        description:
+          "Estas cookies rastrean a los usuarios en diferentes sitios web para ofrecer anuncios relevantes y pueden procesar datos personales, por lo que requieren el consentimiento explícito.",
+      },
+      preferences: {
+        label: "Preferencias",
+        description:
+          "Estas cookies recuerdan configuraciones como el idioma o la región y almacenan preferencias de visualización para ofrecer una experiencia más personalizada y fluida.",
+      },
+    },
+  },
+  French: {
+    heading: "Préférences des Cookies",
+    description:
+      "Ces cookies sont nécessaires au bon fonctionnement du site web. Ils ne stockent aucune information personnelle.",
+    acceptAll: "Accepter",
+    reject: "Refuser",
+    changePreference: "Modifier les Préférences",
+    sections: {
+      essential: {
+        label: "Essentiels",
+        description:
+          "Les cookies essentiels permettent les fonctions de base du site, comme la sécurité et l'accessibilité. Ils ne stockent pas de données personnelles et ne peuvent pas être désactivés.",
+      },
+      analytics: {
+        label: "Analytiques",
+        description:
+          "Ces cookies collectent des données anonymes pour nous aider à améliorer les fonctionnalités du site web et à enrichir l'expérience utilisateur.",
+      },
+      marketing: {
+        label: "Marketing",
+        description:
+          "Ces cookies suivent les utilisateurs sur différents sites web pour diffuser des publicités pertinentes et peuvent traiter des données personnelles, nécessitant ainsi un consentement explicite.",
+      },
+      preferences: {
+        label: "Préférences",
+        description:
+          "Ces cookies mémorisent des paramètres tels que la langue ou la région et enregistrent les préférences d'affichage afin d'offrir une expérience plus personnalisée et fluide.",
+      },
+    },
+  },
+  German: {
+    heading: "Cookie-Einstellungen",
+    description:
+      "Durch Klicken stimmen Sie zu, Cookies auf Ihrem Gerät zu speichern, um die Navigation zu verbessern, die Nutzung zu analysieren und Marketing zu unterstützen",
+    acceptAll: "Einstellungen speichern",
+    reject: "Ablehnen",
+    changePreference: "Einstellungen ändern",
+    sections: {
+      essential: {
+        label: "Notwendig",
+        description:
+          "Notwendige Cookies ermöglichen grundlegende Website-Funktionen wie Sicherheit und Barrierefreiheit. Sie speichern keine persönlichen Daten und können nicht deaktiviert werden.",
+      },
+      analytics: {
+        label: "Analytik",
+        description:
+          "Diese Cookies sammeln anonyme Daten, um uns zu helfen, die Website-Funktionalität zu verbessern und die Benutzererfahrung zu optimieren.",
+      },
+      marketing: {
+        label: "Marketing",
+        description:
+          "Diese Cookies verfolgen Benutzer über Websites hinweg, um relevante Anzeigen zu liefern und können persönliche Daten verarbeiten, was eine ausdrückliche Zustimmung erfordert.",
+      },
+      preferences: {
+        label: "Einstellungen",
+        description:
+          "Diese Cookies merken sich Einstellungen wie Sprache oder Region und speichern Anzeigepräferenzen, um eine personalisiertere, nahtlose Erfahrung zu bieten.",
+      },
+    },
+  },
+  Italian: {
+    heading: "Preferenze sui Cookie",
+    description:
+      "Cliccando, accetti di memorizzare i cookie sul tuo dispositivo per migliorare la navigazione, analizzare l'utilizzo e supportare il marketing",
+    acceptAll: "Salva Preferenze",
+    reject: "Rifiuta",
+    changePreference: "Cambia Preferenze",
+    sections: {
+      essential: {
+        label: "Essenziali",
+        description:
+          "I cookie essenziali abilitano le funzioni principali del sito come sicurezza e accessibilità. Non memorizzano dati personali e non possono essere disabilitati.",
+      },
+      analytics: {
+        label: "Analitica",
+        description:
+          "Questi cookie raccolgono dati anonimi per aiutarci a migliorare la funzionalità del sito web e ottimizzare l'esperienza utente.",
+      },
+      marketing: {
+        label: "Marketing",
+        description:
+          "Questi cookie tracciano gli utenti su diversi siti web per fornire annunci rilevanti e possono elaborare dati personali, richiedendo un consenso esplicito.",
+      },
+      preferences: {
+        label: "Preferenze",
+        description:
+          "Questi cookie ricordano le impostazioni come lingua o regione e memorizzano le preferenze di visualizzazione per offrire un'esperienza più personalizzata e fluida.",
+      },
+    },
+  },
+  Portuguese: {
+    heading: "Preferências de Cookies",
+    description:
+      "Ao clicar, você concorda em armazenar cookies no seu dispositivo para melhorar a navegação, analisar o uso e apoiar o marketing",
+    acceptAll: "Salvar Preferências",
+    reject: "Rejeitar",
+    changePreference: "Alterar Preferências",
+    sections: {
+      essential: {
+        label: "Essenciais",
+        description:
+          "Os cookies essenciais permitem funções básicas do site como segurança e acessibilidade. Eles não armazenam dados pessoais e não podem ser desabilitados.",
+      },
+      analytics: {
+        label: "Analíticos",
+        description:
+          "Esses cookies coletam dados anônimos para nos ajudar a melhorar a funcionalidade do site e otimizar a experiência do usuário.",
+      },
+      marketing: {
+        label: "Marketing",
+        description:
+          "Esses cookies rastreiam usuários em diferentes sites para fornecer anúncios relevantes e podem processar dados pessoais, exigindo consentimento explícito.",
+      },
+      preferences: {
+        label: "Preferências",
+        description:
+          "Esses cookies lembram configurações como idioma ou região e armazenam preferências de exibição para oferecer uma experiência mais personalizada e fluida.",
+      },
+    },
+  },
+  Swedish: {
+    heading: "Cookie-inställningar",
+    description:
+      "Genom att klicka godkänner du att lagra cookies på din enhet för att förbättra navigering, analysera användning och stödja marknadsföring",
+    acceptAll: "Spara Inställningar",
+    reject: "Avvisa",
+    changePreference: "Ändra Inställningar",
+    sections: {
+      essential: {
+        label: "Nödvändiga",
+        description:
+          "Nödvändiga cookies aktiverar grundläggande webbplatsfunktioner som säkerhet och tillgänglighet. De lagrar inte personuppgifter och kan inte inaktiveras.",
+      },
+      analytics: {
+        label: "Analytik",
+        description:
+          "Dessa cookies samlar in anonyma data för att hjälpa oss att förbättra webbplatsens funktionalitet och optimera användarupplevelsen.",
+      },
+      marketing: {
+        label: "Marknadsföring",
+        description:
+          "Dessa cookies spårar användare över webbplatser för att leverera relevanta annonser och kan behandla personuppgifter, vilket kräver uttryckligt samtycke.",
+      },
+      preferences: {
+        label: "Inställningar",
+        description:
+          "Dessa cookies kommer ihåg inställningar som språk eller region och lagrar visningspreferenser för att erbjuda en mer personlig och smidig upplevelse.",
+      },
+    },
+  },
+  Dutch: {
+    heading: "Cookie-instellingen",
+    description:
+      "Door te klikken stemt u in met het opslaan van cookies op uw apparaat om navigatie te verbeteren, gebruik te analyseren en marketing te ondersteunen",
+    acceptAll: "Instellingen Opslaan",
+    reject: "Weigeren",
+    changePreference: "Instellingen Wijzigen",
+    sections: {
+      essential: {
+        label: "Essentieel",
+        description:
+          "Essentiële cookies maken kernwebsite-functies mogelijk zoals beveiliging en toegankelijkheid. Ze slaan geen persoonlijke gegevens op en kunnen niet worden uitgeschakeld.",
+      },
+      analytics: {
+        label: "Analytics",
+        description:
+          "Deze cookies verzamelen anonieme gegevens om ons te helpen de website-functionaliteit te verbeteren en de gebruikerservaring te optimaliseren.",
+      },
+      marketing: {
+        label: "Marketing",
+        description:
+          "Deze cookies volgen gebruikers op verschillende websites om relevante advertenties te leveren en kunnen persoonlijke gegevens verwerken, wat expliciete toestemming vereist.",
+      },
+      preferences: {
+        label: "Voorkeuren",
+        description:
+          "Deze cookies onthouden instellingen zoals taal of regio en slaan weergavevoorkeuren op om een meer gepersonaliseerde, naadloze ervaring te bieden.",
+      },
+    },
+  },
+};
+
+
+
 const custom = customization || {
     bannerAlignment: "center",
     bannerStyle: "style1",
