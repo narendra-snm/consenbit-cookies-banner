@@ -1528,10 +1528,10 @@ ${
           `
 }
 <!-- Preference Panel -->
-<div id="main-banner"  class="consentbit-preference hidden">
+<div id="main-banner" ${settings.disableScroll ? `data-cookie-banner= "true"` : ""}  class="consentbit-preference hidden">
   <div
 
-  ${settings.disableScroll ? `data-cookie-banner= "true"` : ""}
+  
     data-animation="${settings.animation}"
     class="consentbit-preference_div hidden"
   >
