@@ -7,7 +7,10 @@ customization,
 settings,
 
 } = JSON.parse(rawConfig);
-console.log(config)
+console.log(checkedCategories,
+compliance,
+customization,
+settings,)
 const custom = customization || {
     bannerAlignment: "center",
     bannerStyle: "style1",
