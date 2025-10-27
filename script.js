@@ -1715,4 +1715,7 @@ ${
 
 <div>
 `;
- document.body.insertAdjacentHTML('beforeend', cookiePreviewHTML);
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.insertAdjacentHTML('beforeend', cookiePreviewHTML);
+});
+
