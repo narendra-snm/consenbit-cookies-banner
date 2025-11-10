@@ -13,10 +13,7 @@ compliance,
 customization,
 settings,)
 
-document.querySelectorAll('[aria-label="consentbit-link-donotshare"]').forEach(el => {
-  el.setAttribute("consentbit-data-donotshare", "consentbit-link-donotshare");
-  el.removeAttribute("aria-label"); // ✅ remove aria-label to avoid accessibility issues
-});
+
 
 const moreInfoTranslations = {
   English: "More Info",
@@ -1715,7 +1712,7 @@ ${
 <div id="consensite-banner-type" style="display:none">${
     compliance.length === 1 && compliance.includes("gdpr") ? "gdpr" : "ccpa"
   }</div>
-<div id="toggle-consent-btn" scroll-control="true" class="consentbit-change-preference"></div>
+<div id="toggle-consent-btn hidden" scroll-control="true" class="consentbit-change-preference"></div>
 
 <div>
 `;
