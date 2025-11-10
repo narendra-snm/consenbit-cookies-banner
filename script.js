@@ -1712,7 +1712,7 @@ ${
 <div id="consensite-banner-type" style="display:none">${
     compliance.length === 1 && compliance.includes("gdpr") ? "gdpr" : "ccpa"
   }</div>
-<div id="toggle-consent-btn hidden" scroll-control="true" class="consentbit-change-preference"></div>
+<div id="toggle-consent-btn"   scroll-control="true" class="consentbit-change-preference hidden"></div>
 
 <div>
 `;
