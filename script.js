@@ -13,6 +13,10 @@ compliance,
 customization,
 settings,)
 
+document.querySelectorAll('[aria-label="consentbit-link-donotshare"]').forEach(el => {
+  el.setAttribute("consentbit-data-donotshare", "consentbit-link-donotshare");
+  el.removeAttribute("aria-label"); // ✅ remove aria-label to avoid accessibility issues
+});
 
 const moreInfoTranslations = {
   English: "More Info",
