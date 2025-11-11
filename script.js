@@ -8,10 +8,7 @@ customization,
 settings,
 
 } = JSON.parse(rawConfig);
-console.log(checkedCategories,
-compliance,
-customization,
-settings,)
+
 
 
 
